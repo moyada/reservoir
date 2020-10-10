@@ -1,0 +1,37 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+
+# 应用名称
+spring:
+  application:
+    name: reservoir
+  task:
+    execution:
+      pool:
+        core-size: 8
+        max-size: 16
+        queue-capacity: 50
+        keep-alive: 10s
+  # 数据库驱动：
+  datasource:
+    name: defaultDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://119.23.110.20:3306/shuiqing?serverTimezone=Asia/Shanghai&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    username: shuiqing
+    password: jebEofTQJnCqlzD0
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 8
+  redis:
+    host: 119.23.110.20
+    port: 6379
+    password: krur6vZRapxBpMg
+    database: 1
+    jedis:
+      pool:
+        min-idle: 4
+        max-active: 8
+        max-idle: 8
+        max-wait: 30s
+        time-between-eviction-runs: 30s
